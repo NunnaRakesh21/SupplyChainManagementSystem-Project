@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+
+<style>
+body {
+            background-color:lightpink;
+        }
+
+        h3 {
+            text-align: center;
+            color: navy;
+        }
+
+
+  .column {
+    flex: 1;
+    max-width: 33%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .card img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+  }
+   .image-container {
+    display: inline-block;
+    width: 30%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+  }
+
+  .image-container:last-child {
+    margin-right: 0;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    padding: 10px;
+    text-align: justify;
+  }
+   a {
+            text-decoration: none;
+            color: navy;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: lightblue;
+        }
+
+        a:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+   .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: navy;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar a {
+            margin: 0 10px;
+        }
+
+        mark {
+            background-color: yellow;
+            font-style: italic;
+            font-weight: bold;
+        }
+</style>
+
+
+</head>
+<body>
+
+
+
+<br>
+
+ <header>
+        <nav class="navbar">
+            <ul>
+
+                <a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;
+                <a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;
+                <a href="{% url 'registration' %}">Registration</a>&nbsp;&nbsp;
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'supplierlogin' %}">Supplier Login</a>
+                <a href="{% url 'adminlogin' %}">Admin Login</a>&nbsp;&nbsp;
+
+
+            </ul>
+        </nav>
+ </header>
+<h3 align=center>SERVICES</h3>
+<br><br><br>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <center><img src="{% static 'images/rawmaterials.png' %}" alt="Raw Material" style="width:60%"></center>
+      <div class="container">
+        <h2>Raw Material</h2>
+         <p>Manufacturing begins with raw materials. The final quality of the products you produce can be no better than
+             the quality of the raw materials you start with. Likewise, the quality of any services you purchase that
+             touches the production of your product affects its quality as well.
+         </p>
+
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <center><img src="{% static 'images/services.png' %}" alt="Digital marketing and  Sales" style="width:95%"></center>
+      <div class="container">
+        <h2>Digital marketing and Sales</h2>
+         <p>Our sales and commercial services and solutions are proven to increase
+             top-linevolume, market share, revenue contribution, and profit contribution
+             while reducing revenue leakage and customer attrition.We differentiate by creating unique customer and employee
+             experiences using digital technologies, data-driven insights, advanced analytics, and advisory and managed services.
+         </p>
+
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <center><img src="{% static 'images/services2.png' %}" alt="Finance transformation services" style="width:95%"></center>
+      <div class="container">
+        <h2>Finance transformation services</h2>
+        <p>Accounts payable (AP) digital transformation that improves cash flow,
+            boosts compliance, and transforms the user experience.Deliver a faster financial close,
+            improve compliance,and enhance decision-making by transforming your record to report process.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>

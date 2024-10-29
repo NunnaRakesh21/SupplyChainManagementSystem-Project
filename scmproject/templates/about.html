@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  background-color:lightpink;
+
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  margin: 8px;
+}
+
+.about-section {
+
+  text-align: center;
+  color: blue;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: 2px solid #4CAF50;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: black;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+  a {
+            text-decoration: none;
+            color: navy;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: lightblue;
+        }
+
+        a:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+   .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: navy;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar a {
+            margin: 0 10px;
+        }
+
+        mark {
+            background-color: yellow;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+ ul {
+  list-style-type: none;
+  margin: 10;
+  padding: 0px;
+  overflow: hidden;
+  background-color: lightblue;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: blue;
+ font-size:20px;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.active{
+background-color: gray;
+color: white;
+}
+li a:hover {
+  background-color: orange;
+  color: white;
+}
+        .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+        <nav class="navbar">
+               <ul>
+               <a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;
+               <a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;
+               <a href="{% url 'registration' %}">Registration</a>&nbsp;&nbsp;
+               <a href="{% url 'about' %}">About</a>
+               <a href="{% url 'services' %}">Services</a>
+                   <a href="{% url 'supplierlogin' %}">Supplier Login</a>
+               <a href="{% url 'adminlogin' %}">Admin Login</a>&nbsp;&nbsp;
+
+            </ul>
+        </nav>
+    </header>
+
+<br><br><br>
+<div class="about-section">
+
+  <p>We are doing SDP2 Project</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/manoj.png' %}" alt="Manoj" style="width:74%">
+      <div class="container">
+        <h2>Manoj</h2>
+        <p class="title">CSE-Honors</p>
+        <p>manoj@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/hari.png' %}" alt="Hari" style="width:95%">
+      <div class="container">
+        <h2>Hari Venkatesh</h2>
+        <p class="title">CSE-Honors</p>
+        <p>hari@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/rakesh.png' %}" alt="Rakesh" style="width:82%">
+      <div class="container">
+        <h2>Rakesh</h2>
+        <p class="title">CSE-Honors</p>
+        <p>rakesh@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

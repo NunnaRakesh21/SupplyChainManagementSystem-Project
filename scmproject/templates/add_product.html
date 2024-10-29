@@ -1,0 +1,17 @@
+{% extends 'supplierpurpose.html' %}
+
+{% block content %}
+  <center>
+      <h3>{{msg}}</h3>
+  <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+     {% for field in form %}
+
+     {{field.label}}
+      <br/>{{field}}<br/>
+     {% endfor %}
+    <br/>
+    <input type="submit" value="Add Product"></input>
+  </form>
+    </center>
+{% endblock %}

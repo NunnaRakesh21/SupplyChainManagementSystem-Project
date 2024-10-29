@@ -1,0 +1,38 @@
+{% extends 'adminpurpose.html' %}
+
+{% load static %}
+
+{% block content %}
+<br><br><h1 align="center">Customers List</h1><br><br>
+  <table align="center" border="2">
+    <tr style="font-weight:bold">
+        <td>Full Name</td>
+        <td>Date of Birth</td>
+        <td>EMAIL ID</td>
+        <td>Username</td>
+        <td>Contact No</td>
+        <td>Registration Time</td>
+        <td>Action</td>
+    </tr>
+
+    {% for customer in customers %}
+    <tr>
+        <td>{{customer.fullname}}</td>
+        <td>{{customer.dateofbirth}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.username}}</td>
+        <td>{{customer.contact}}</td>
+        <td>{{customer.registrationtime}}</td>
+        <td>
+
+            <a href="/deletecustomer/{{customer.id}}">Delete</a>
+
+        </td>
+
+    </tr>
+    {% endfor %}
+{% endblock %}
+
+
+
+</table>

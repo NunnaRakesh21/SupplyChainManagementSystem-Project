@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 align="center"><u>Product List</u> </h2>
+
+    {% for product in products %}
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Supplier</th>
+          <th>Seller</th>
+          <th>Image</th>
+          <th>Quantity</th>
+          <th>Make Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.supplier }}</td>
+          <td>{{ product.seller }}</td>
+          <td><img src="{{product.image.url}}" alt="Nothing" style="width:40" height="50"></td>
+          <td><input type="number" min="1" value="1" name="quantity" id="quantity_{{ product.id }}" min="1" max="{{ product.quantity }}"></td>
+          <td><button onclick="place_order({{ product.id }}, '{{ product.name }}', {{ product.price }})" class="button">Order</button><script src="https://checkout.razorpay.com/v1/checkout.js"></script></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endfor %}
+
+  <script>
+    function place_order(id, name, price) {
+  var qty = document.getElementById("quantity_"+id).value;
+  if (qty == 0) {
+    alert("Out of stock!");
+    return;
+  }
+  var totalprice = qty * price;
+  var options = {
+    "key": "rzp_test_8TNwXsPpbrtu5S",
+    "amount": totalprice*100,
+    "currency": "INR",
+    "paymentId":"https://rzp.io/i/fV5ARk9JQ",
+    "Offer id":"https://dashboard.razorpay.com/app/offers/offer_LR161fzQOYab5q",
+    "name": "HLI",
+    "description": "Payment for Order No: 1234",
+    "image": "../static/image/BGR1.png",
+    "handler": function (response) {
+        alert("Payment Success");
+    },
+    "prefill": {
+        "name": "",
+        "email": "",
+        "contact": "+"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#F37254"
+    }
+  };
+  var rzp1 = new Razorpay(options);
+  rzp1.open();
+}
+
+</script>
+{% endblock %}

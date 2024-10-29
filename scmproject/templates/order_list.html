@@ -1,0 +1,51 @@
+{% extends 'adminpurpose.html' %}
+
+{% block content %}
+<style>
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #428bca;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
+  <h2>Orders</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Delivery Address</th>
+        <th>Payment Terms</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+        <tr>
+          <td>{{ order.customer_name }}</td>
+          <td>{{ order.product_name }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.delivery_address }}</td>
+          <td>{{ order.payment_terms }}</td>
+          <td>{{ order.status }}</td>
+        </tr>
+      <br>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

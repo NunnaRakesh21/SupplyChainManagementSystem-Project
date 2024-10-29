@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supply Chain Management System</title>
+    <style>
+
+* {
+   box-sizing: border-box;
+}
+body {
+  background-color:lightgreen;
+
+
+}
+.imageColumn {
+   float: left;
+   width: 25%;
+   padding: 10px;
+}
+
+       ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background-color: lightblue;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid red;
+}
+
+th {
+  background-color: #428bca;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: blue;
+ font-size:20px;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.active{
+background-color: gray;
+color: white;
+}
+li a:hover {
+  background-color: orange;
+  color: white;
+}
+        h1 {
+          text-decoration: underline wavy DeepPink 2px;
+        }
+
+.body{
+   justify-content: center;
+  align-items: center;
+  }
+  form {
+            border: 1px solid black;
+            padding: 20px;
+            margin-top: 50px;
+            width: 50%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: dodgerblue;
+        }
+        form input {
+    border: 2px solid dodgerblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 12px;
+  color: white;
+  background-color: green;
+  text-align: center;
+  cursor: pointer;
+  width: 40%;
+  border-radius: 50px;
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card table {
+  width: 100%;
+}
+
+.card th,
+.card td {
+  text-align: center;
+  padding: 10px;
+}
+
+.card th {
+  font-weight: bold;
+  border-bottom: 1px solid red;
+}
+
+.card img {
+  display: block;
+  margin: 10 auto;
+  max-width: 50%;
+  height: auto;
+}
+
+
+
+
+        a {
+            text-decoration: none;
+            color: navy;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: lightblue;
+        }
+
+        a:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+</style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'product_list' %}">Products</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+
+
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

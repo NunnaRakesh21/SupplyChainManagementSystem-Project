@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+<head>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  background-image: url("https://img.freepik.com/free-vector/paper-style-white-monochrome-background_52683-66443.jpg?w=360");
+}
+body {font-family: Arial, Helvetica, sans-serif}
+body {
+            background-color:lightpink;
+        }
+body {font-family: Arial, Helvetica, sans-serif}
+* {box-sizing: border-box;margin:0}
+
+.bg-img {
+  /* The image used */
+  background-image: url('{% static "images/background.png" %}');
+
+  min-height: 753px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+        h1 {
+            text-align: center;
+            color: navy;
+        }
+
+        form {
+            border: 1px solid black;
+            padding: 20px;
+            margin-top: 50px;
+            width: 50%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: dodgerblue;
+        }
+
+        a {
+            text-decoration: none;
+            color: navy;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: lightblue;
+        }
+
+        a:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: navy;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar a {
+            margin: 0 10px;
+        }
+
+        mark {
+            background-color: yellow;
+            font-style: italic;
+            font-weight: bold;
+        }
+  button
+  {
+       font-size: 16px;
+  }
+    </style>
+
+
+
+</head>
+<body>
+
+
+
+<br>
+
+ <header>
+        <nav class="navbar">
+            <ul>
+
+                <a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;
+                <a href="{% url 'login' %}">User Login</a>&nbsp;&nbsp;
+                <a href="{% url 'registration' %}">Registration</a>&nbsp;&nbsp;
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'supplierlogin' %}">Supplier Login</a>
+                <a href="{% url 'adminlogin' %}">Admin Login</a>&nbsp;&nbsp;
+
+            </ul>
+        </nav>
+ </header>
+
+<br><br><br>
+
+
+</div>
+
+</div>
+<h1><center><b>SUPPLY CHAIN MANAGEMENT SYSTEM</b></center></h1>
+<center><img src="{% static 'images/project.png' %}" alt="Pro" style="width:70%"></center>
+
+</body>
+</html>
